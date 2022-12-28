@@ -128,9 +128,10 @@ def fmenu1():
 
 
 #Definició del menu de la vida
-def fmenu11(Vida):
+def fmenu11():
     os.system('cls')
     # verificar si se quanta vida té
+    global Vida
     if Vida == 10011999:
         # Si no he introduit una vegada la quantitat de vida que tinc, hauré d'introduir-lo
         while True:

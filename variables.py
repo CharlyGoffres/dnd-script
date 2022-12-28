@@ -1,5 +1,6 @@
 #Aquí van les variables perqué siguin accessibles per les altres funcions
 #Informació sobre el personatge
+Nom_del_personatge = "Gargamell"
 Level = 7
 Hit_dice = 6
 Modificador_Strengh_pur = 8
@@ -27,3 +28,5 @@ Spell_Level_1_Max = 4
 Spell_Level_2_Max = 3
 Spell_Level_3_Max = 3
 Spell_Level_4_Max = 1
+
+#Per un futur, posar rollo Dexterity proficiency =True o false, i que apartir daqui sapliquin a les tirades les coses corresponents.

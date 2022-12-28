@@ -1,15 +1,5 @@
 #El scrip principal del programa
-#Importem packages
-#Pel clear
-import os
-#Per poder fer que s'esperi el temps
-import time
-#Per poder fer el random dels daus
-import random
+#Només fa falta importar el programa de inici perque els altres ja estan importats en els seus espais
+import inici
 
-#Importem els altres programes
-import dice
-import menu0
-
-print(dice.fdau(12))
-menu0.fmenu0()
+inici.finici()
