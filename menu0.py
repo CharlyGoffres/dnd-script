@@ -3,8 +3,6 @@
 import os
 #Per poder fer que s'esperi el temps
 import time
-#Per poder fer el random dels daus
-import random
 
 #Per importar les variables
 import variables

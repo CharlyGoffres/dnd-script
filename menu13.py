@@ -1,3 +1,4 @@
+# MENU 13 TIRADES DE SALVACIO 
 # #Pel clear
 import os
 #Per poder fer que s'esperi el temps
