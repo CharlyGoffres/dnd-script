@@ -13,6 +13,19 @@ import menu1
 def fmenu12():
     os.system('cls')
     menu12 = input("Menú dels hechizos. Aquí tens les opcions: \n(1) Veure el nombre de Spell Slots \n(2) Llista de Spells \n(3) Atacar \n(4) Tira enrere \n(5) Vull tancar el programa \n")
+    class Hechizos:
+        def __init__(self, nom, tipus, level, level_base):
+            self.nombre = nom
+            self.tipo = tipus
+            self.level = level
+            self.level_base = level_base
+    
+        def damage(self):
+    # Crear un hechizo de tipo fuego con nivel 3
+    hechizo_fuego = Hechizos("Llamarada", "fuego", 3)
+
+    # Calcular el daño del hechizo de fuego
+    damage = hechizo_fuego.damage()
     i = 0
     while i == 0:
         match menu12:
