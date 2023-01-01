@@ -1,0 +1,65 @@
+{
+    "name": "Aurora",
+    "class": "Paladin",
+    "level": 5,
+    "stats": {
+      "strength": 14,
+      "dexterity": 10,
+      "constitution": 12,
+      "intelligence": 10,
+      "wisdom": 16,
+      "charisma": 18
+    },
+    "inventory": [
+      { "item": "holy longsword", "quantity": 1 },
+      { "item": "scale mail armor", "quantity": 1 },
+      { "item": "healing potion", "quantity": 3 }
+    ],
+    "hechizos": [
+      {
+        "nombre": "Bola de Fuego",
+        "nivel": 3,
+        "escuela": "evocación",
+        "tiempoDeCasteo": "1 acción",
+        "distancia": "150 pies",
+        "componentes": ["V", "S", "M"],
+        "duración": "instantánea",
+        "descripción": "Creas una bola de fuego de 20 pies de diámetro que explota al impactar con un objeto o al finalizar su rango. Todos los objetos y criaturas dentro del área deben realizar una tirada de salvación de Constitución o recibir 6d6 de daño de fuego.",
+        "notas": "Si la tirada de salvación es exitosa, se reduce el daño a la mitad."
+      },
+      {
+        "nombre": "Invisibilidad",
+        "nivel": 2,
+        "escuela": "ilusión",
+        "tiempoDeCasteo": "1 acción",
+        "distancia": "tocar",
+        "componentes": ["V", "S", "M"],
+        "duración": "concentración, hasta 1 hora",
+        "descripción": "Haces que una criatura o objeto tocado se vuelva invisible hasta que el hechizo termine. La criatura o el objeto desaparece de la vista de todos, pero no deja de existir y sigue ocupando espacio.",
+        "notas": "El hechizo termina si la criatura ataca a alguien o si usa un objeto."
+      }
+    ]
+  }
+  
+
+#per importar dades del jason darulo
+import json
+
+# Abre el archivo JSON
+with open('datos.json', 'r') as f:
+  # Carga los datos del archivo JSON
+  datos = json.load(f)
+
+# Ahora puedes trabajar con los datos como si fuera un diccionario de Python
+print(datos['nombre'])
+
+
+#per modificar dades desde python del jason darulo
+import json
+
+# Abre el archivo JSON para escribir
+with open('datos.json', 'w') as f:
+  # Crea un diccionario con los nuevos datos
+  datos = {'nombre': 'Nuevo nombre'}
+  # Escribe los datos al archivo JSON
+  json.dump(datos, f)

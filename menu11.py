@@ -26,6 +26,8 @@ def fmenu11():
     else:
          # Si la variable Vida està actualitzada, surtirà aquest missatge.
         print("M'enrecordo de la teva vida")
+    if variables.Vida <= 0:
+        print("Has mort")
 #Aqui ja demana les opcions del menú
     menu11 = input("Menú de la Vida. Aquí tens les opcions: \n(1) Veure la Vida \n(2) Treure Vida \n(3) Curar Vida \n(4) Canviar la vida que tinc manualment \n(5) Tira enrere \n(6) Vull tancar el programa \n")
     i = 0

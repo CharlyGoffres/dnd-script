@@ -9,7 +9,7 @@ import variables
 #Per viatjar pels diferents menus
 import menu0
 import menu11
-import menu12
+#import menu12
 import menu13
 import menu14
 import menu15
