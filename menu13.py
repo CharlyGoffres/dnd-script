@@ -4,12 +4,14 @@ import os
 #Per poder fer que s'esperi el temps
 import time
 
-#Per importar les variables
-import variables
+
 #Per viatjar pels diferents menus
 import dice
 import menu1
-
+import json
+#Per importar les variables
+with open("variables.json", "r") as f:
+    variables = json.load(f)
 
 #Definició del menu de les tirades de salvació
 def fmenu13():
@@ -21,48 +23,48 @@ def fmenu13():
                 dau = dice.fdau(20)
                 i = 1
                 print("La teva tirada de salvació de força ha estat de: ")
-                print(dau + variables.Modificador_Strengh)
-                print(dau, variables.Modificador_Strengh)
+                print(dau + ((variables["stats"]["strenght"] - 10) // 2))
+                print(dau, ((variables["stats"]["strenght"] - 10) // 2))
                 time.sleep(5)
                 fmenu13()
             case "2":
                 dau = dice.fdau(20)
                 i = 1
-                print("La teva tirada de salvació de força ha estat de: ")
-                print(dau + variables.Modificador_Constitution)
-                print(dau, variables.Modificador_Constitution)
+                print("La teva tirada de salvació de constitució ha estat de: ")
+                print(dau + ((variables["stats"]["constitution"] - 10) // 2))
+                print(dau, ((variables["stats"]["constitution"] - 10) // 2))
                 time.sleep(5)
                 fmenu13()
             case "3":
                 dau = dice.fdau(20)
                 i = 1
-                print("La teva tirada de salvació de força ha estat de: ")
-                print(dau + variables.Modificador_Dexterity)
-                print(dau, variables.Modificador_Dexterity)
+                print("La teva tirada de salvació de destresa ha estat de: ")
+                print(dau + ((variables["stats"]["dexterity"] - 10) // 2))
+                print(dau, ((variables["stats"]["dexterity"] - 10) // 2))
                 time.sleep(5)
                 fmenu13()
             case "4":
                 dau = dice.fdau(20)
                 i = 1
-                print("La teva tirada de salvació de força ha estat de: ")
-                print(dau + variables.Modificador_Wisdom + variables.Proficiency_Bonus)
-                print(dau, variables.Modificador_Wisdom, variables.Proficiency_Bonus)
+                print("La teva tirada de salvació de sabiduria ha estat de: ")
+                print(dau + ((variables["stats"]["wisdom"] - 10) // 2) + variables["proficiency"])
+                print(dau, ((variables["stats"]["wisdom"] - 10) // 2), variables["proficiency"])
                 time.sleep(5)
                 fmenu13()
             case "5":
                 dau = dice.fdau(20)
                 i = 1
-                print("La teva tirada de salvació de força ha estat de: ")
-                print(dau + variables.Modificador_Intelligence + variables.Proficiency_Bonus)
-                print(dau, variables.Modificador_Intelligence, variables.Proficiency_Bonus)
+                print("La teva tirada de salvació de inteligencia ha estat de: ")
+                print(dau + ((variables["stats"]["intelligence"] - 10) // 2) + variables["proficiency"])
+                print(dau, ((variables["stats"]["intelligence"] - 10) // 2), variables["proficiency"])
                 time.sleep(5)
                 fmenu13()
             case "6":
                 dau = dice.fdau(20)
                 i = 1
-                print("La teva tirada de salvació de força ha estat de: ")
-                print(dau + variables.Modificador_Charisma)
-                print(dau, variables.Modificador_Charisma)
+                print("La teva tirada de salvació de carisma ha estat de: ")
+                print(dau + ((variables["stats"]["charisma"] - 10 // 2)))
+                print(dau, ((variables["stats"]["charisma"] - 10 // 2)))
                 time.sleep(5)
                 fmenu13()
             case "7":

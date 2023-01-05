@@ -5,11 +5,14 @@ import os
 import time
 
 #Per importar les variables
-import variables
+
 #Per viatjar pels diferents menus
 import dice
 import menu1
-
+import json
+#Per importar les variables
+with open("variables.json", "r") as f:
+    variables = json.load(f)
 
 #Menu de les Rest 
 # NO ACABAT

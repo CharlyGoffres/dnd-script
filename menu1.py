@@ -4,8 +4,6 @@ import os
 #Per poder fer que s'esperi el temps
 import time
 
-#Per importar les variables
-import variables
 #Per viatjar pels diferents menus
 import menu0
 import menu11
@@ -14,10 +12,15 @@ import menu13
 import menu14
 import menu15
 
+import json
+#Per importar les variables
+with open("variables.json", "r") as f:
+    variables = json.load(f)
+
 #Definció del menu 1 (Gargamel), amb les seves 7 opcions
 def fmenu1():
     os.system('cls')
-    menu1 = input("Benvingut de nou {}. Aquí tens les opcions: \n(1) Vida \n(2) Hechizos \n(3) Tirades de salvació \n(4) Skills \n(5) Rest \n(6) No sóc en Gargamel, tira enrere \n(7) Vull tancar el programa \n".format(variables.Nom_del_personatge))
+    menu1 = input("Benvingut de nou {}. Aquí tens les opcions: \n(1) Vida \n(2) Hechizos \n(3) Tirades de salvació \n(4) Skills \n(5) Rest \n(6) No sóc en Gargamel, tira enrere \n(7) Vull tancar el programa \n".format(variables["name"]))
     i = 0
     while i == 0:
         match menu1:

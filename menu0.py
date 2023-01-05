@@ -5,14 +5,18 @@ import os
 import time
 
 #Per importar les variables
-import variables
+import json
 import menu1
 import menu2
+
+#Per importar les variables
+with open("variables.json", "r") as f:
+    variables = json.load(f)
 
 #Funció del primer menú amb les 3 opcions
 def fmenu0():
     os.system('cls')
-    menu0 = input("(1) Entres com a {} \n(2) Entres com a DM \n(3) Vull tancar el programa \n".format(variables.Nom_del_personatge))
+    menu0 = input("(1) Entres com a {} \n(2) Entres com a DM \n(3) Vull tancar el programa \n".format(variables["name"]))
     i = 0
     while i == 0:
         match menu0:

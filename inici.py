@@ -1,9 +1,5 @@
-#Pel clear
-import os
 #Per poder fer que s'esperi el temps
 import time
-#Per poder fer el random dels daus
-import random
 
 #tambe hem d'importar tots els files qe tinguin les funcions de la funcio
 import menu0

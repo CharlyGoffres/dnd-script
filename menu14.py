@@ -5,11 +5,14 @@ import os
 import time
 
 #Per importar les variables
-import variables
+
 #Per viatjar pels diferents menus
 import menu1
 import dice
-
+import json
+#Per importar les variables
+with open("variables.json", "r") as f:
+    variables = json.load(f)
 
 
 #Menu de les de skill
@@ -22,144 +25,144 @@ def fmenu14():
                 i = 1
                 dau = dice.fdau(20)
                 print("La teva tirada de Acrobatics ha estat de: ")
-                print(dau + variables.Modificador_Dexterity)
-                print(dau, variables.Modificador_Dexterity)
+                print(dau + ((variables["stats"]["dexterity"] - 10) // 2))
+                print(dau, ((variables["stats"]["dexterity"] - 10) // 2))
                 time.sleep(5)
                 fmenu14()
             case "2":
                 i = 1
                 dau = dice.fdau(20)
                 print("La teva tirada de Animal Handling ha estat de: ")
-                print(dau + variables.Modificador_Wisdom)
-                print(dau, variables.Modificador_Wisdom)
+                print(dau + ((variables["stats"]["wisdom"] - 10) // 2))
+                print(dau, ((variables["stats"]["wisdom"] - 10) // 2))
                 time.sleep(5)
                 fmenu14()
             case "3":
                 i = 1
                 dau = dice.fdau(20)
                 print("La teva tirada de Arcana ha estat de: ")
-                print(dau + variables.Modificador_Intelligence + variables.Proficiency_Bonus)
-                print(dau, variables.Modificador_Intelligence, variables.Proficiency_Bonus)
+                print(dau + ((variables["stats"]["intelligence"] - 10) // 2) + variables["proficiency"])
+                print(dau, ((variables["stats"]["intelligence"] - 10) // 2), variables["proficiency"])
                 time.sleep(5)
                 fmenu14()
             case "4":
                 i = 1
                 dau = dice.fdau(20)
                 print("La teva tirada de Athletics ha estat de: ")
-                print(dau + variables.Modificador_Strengh)
-                print(dau, variables.Modificador_Strengh)
+                print(dau + ((variables["stats"]["strenght"] - 10) // 2))
+                print(dau, ((variables["stats"]["strenght"] - 10) // 2))
                 time.sleep(5)
                 fmenu14()
             case "5":
                 i = 1
                 dau = dice.fdau(20)
                 print("La teva tirada de Deception ha estat de: ")
-                print(dau + variables.Modificador_Charisma)
-                print(dau, variables.Modificador_Charisma)
+                print(dau + ((variables["stats"]["charisma"] - 10 // 2)))
+                print(dau, ((variables["stats"]["charisma"] - 10 // 2)))
                 time.sleep(5)
                 fmenu14()
             case "6":
                 i = 1
                 dau = dice.fdau(20)
                 print("La teva tirada de History ha estat de: ")
-                print(dau + variables.Modificador_Intelligence + variables.Proficiency_Bonus)
-                print(dau, variables.Modificador_Intelligence, variables.Proficiency_Bonus)
+                print(dau + ((variables["stats"]["intelligence"] - 10) // 2) + variables["proficiency"])
+                print(dau, ((variables["stats"]["intelligence"] - 10) // 2), variables["proficiency"])
                 time.sleep(5)
                 fmenu14()
             case "7":
                 i = 1
                 dau = dice.fdau(20)
                 print("La teva tirada de Insight ha estat de: ")
-                print(dau + variables.Modificador_Wisdom)
-                print(dau, variables.Modificador_Wisdom)
+                print(dau + ((variables["stats"]["wisdom"] - 10) // 2))
+                print(dau, ((variables["stats"]["wisdom"] - 10) // 2))
                 time.sleep(5)
                 fmenu14()
             case "8":
                 i = 1
                 dau = dice.fdau(20)
                 print("La teva tirada de Intimidation ha estat de: ")
-                print(dau + variables.Modificador_Charisma)
-                print(dau, variables.Modificador_Charisma)
+                print(dau + ((variables["stats"]["charisma"] - 10 // 2)))
+                print(dau, ((variables["stats"]["charisma"] - 10 // 2)))
                 time.sleep(5)
                 fmenu14()
             case "9":
                 i = 1
                 dau = dice.fdau(20)
                 print("La teva tirada de Investigation ha estat de: ")
-                print(dau + variables.Modificador_Charisma + variables.Proficiency_Bonus)
-                print(dau, variables.Modificador_Charisma, variables.Proficiency_Bonus)
+                print(dau + ((variables["stats"]["charisma"] - 10 // 2)) + variables["proficiency"])
+                print(dau, ((variables["stats"]["charisma"] - 10 // 2)), variables["proficiency"])
                 time.sleep(5)
                 fmenu14()
             case "10":
                 i = 1
                 dau = dice.fdau(20)
                 print("La teva tirada de Medicine ha estat de: ")
-                print(dau + variables.Modificador_Wisdom)
-                print(dau, variables.Modificador_Wisdom)
+                print(dau + ((variables["stats"]["wisdom"] - 10) // 2))
+                print(dau, ((variables["stats"]["wisdom"] - 10) // 2))
                 time.sleep(5)
                 fmenu14()
             case "11":
                 i = 1
                 dau = dice.fdau(20)
                 print("La teva tirada de Nature ha estat de: ")
-                print(dau + variables.Modificador_Intelligence)
-                print(dau, variables.Modificador_Intelligence)
+                print(dau + ((variables["stats"]["intelligence"] - 10) // 2))
+                print(dau, ((variables["stats"]["intelligence"] - 10) // 2))
                 time.sleep(5)
                 fmenu14()
             case "12":
                 i = 1
                 dau = dice.fdau(20)
                 print("La teva tirada de Perception ha estat de: ")
-                print(dau + variables.Modificador_Wisdom)
-                print(dau, variables.Modificador_Wisdom)
+                print(dau + ((variables["stats"]["wisdom"] - 10) // 2))
+                print(dau, ((variables["stats"]["wisdom"] - 10) // 2))
                 time.sleep(5)
                 fmenu14()
             case "13":
                 i = 1
                 dau = dice.fdau(20)
                 print("La teva tirada de Performance ha estat de: ")
-                print(dau + variables.Modificador_Charisma)
-                print(dau, variables.Modificador_Charisma)
+                print(dau + ((variables["stats"]["charisma"] - 10 // 2)))
+                print(dau, ((variables["stats"]["charisma"] - 10 // 2)))
                 time.sleep(5)
                 fmenu14()
             case "14":
                 i = 1
                 dau = dice.fdau(20)
                 print("La teva tirada de Persuasion ha estat de: ")
-                print(dau + variables.Modificador_Charisma + variables.Proficiency_Bonus)
-                print(dau, variables.Modificador_Charisma, variables.Proficiency_Bonus)
+                print(dau + ((variables["stats"]["charisma"] - 10 // 2)) + variables["proficiency"])
+                print(dau, ((variables["stats"]["charisma"] - 10 // 2)), variables["proficiency"])
                 time.sleep(5)
                 fmenu14()
             case "15":
                 i = 1
                 dau = dice.fdau(20)
                 print("La teva tirada de Religion ha estat de: ")
-                print(dau + variables.Modificador_Intelligence + variables.Proficiency_Bonus)
-                print(dau, variables.Modificador_Intelligence, variables.Proficiency_Bonus)
+                print(dau + ((variables["stats"]["intelligence"] - 10) // 2) + variables["proficiency"])
+                print(dau, ((variables["stats"]["intelligence"] - 10) // 2), variables["proficiency"])
                 time.sleep(5)
                 fmenu14()
             case "16":
                 i = 1
                 dau = dice.fdau(20)
                 print("La teva tirada de Sleight of Hand ha estat de: ")
-                print(dau + variables.Modificador_Dexterity)
-                print(dau, variables.Modificador_Dexterity)
+                print(dau + ((variables["stats"]["dexterity"] - 10) // 2))
+                print(dau, ((variables["stats"]["dexterity"] - 10) // 2))
                 time.sleep(5)
                 fmenu14()
             case "17":
                 i = 1
                 dau = dice.fdau(20)
                 print("La teva tirada de Stealth ha estat de: ")
-                print(dau + variables.Modificador_Dexterity)
-                print(dau, variables.Modificador_Dexterity)
+                print(dau + ((variables["stats"]["dexterity"] - 10) // 2))
+                print(dau, ((variables["stats"]["dexterity"] - 10) // 2))
                 time.sleep(5)
                 fmenu14()
             case "18":
                 i = 1
                 dau = dice.fdau(20)
                 print("La teva tirada de Survival ha estat de: ")
-                print(dau + variables.Modificador_Wisdom)
-                print(dau, variables.Modificador_Wisdom)
+                print(dau + ((variables["stats"]["wisdom"] - 10) // 2))
+                print(dau, ((variables["stats"]["wisdom"] - 10) // 2))
                 time.sleep(5)
                 fmenu14()
             case "19":
