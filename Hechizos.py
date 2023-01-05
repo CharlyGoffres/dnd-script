@@ -1,63 +1,46 @@
-class Hechizos:
-    # Diccionario para llevar un conteo de los hechizos creados para cada nivel
-    LIMITE_HECHIZOS = {
-        1: 10,
-        2: 5,
-        3: 3
-    }
-    
-    # Diccionario que almacena el número de veces que se ha utilizado cada nivel
-    USO_HECHIZOS = {
-        1: 0,
-        2: 0,
-        3: 0
-    }
-    
-    def __init__(self, nombre, tipo, nivel):
-        # Verificar si se ha alcanzado el límite de hechizos para el nivel especificado
-        if Hechizos.USO_HECHIZOS[nivel] >= Hechizos.limite_hechizos[nivel]:
-            raise ValueError(f"Se ha alcanzado el límite de hechizos para el nivel {nivel}")
-        
-        self.nombre = nombre
-        self.tipo = tipo
-        self.nivel = nivel
-        
-        # Aumentar el conteo de hechizos creados para el nivel especificado
-        Hechizos.USO_HECHIZOS[nivel] += 1
-    
-    def daño(self, nivel_extra=0):
-        # Calcula el daño base del hechizo
-        daño = self.nivel * 10
-        
-        # Añade el daño adicional por cada nivel extra
-        for i in range(nivel_extra):
-            daño += 15
-        
-        return daño
-    
-    def modificar_uso_hechizo(self, nivel, usos):
-        # Modificar el número de usos del nivel especificado
-        self.USO_HECHIZOS[nivel] = usos
+import json
 
+# Load the JSON data into a Python object
+with open('character.json', 'r') as f:
+  character = json.load(f)
 
+def use_spell(spell_name, spell_level):
+  # Find the spell in the character's spell list
+  spell = None
+  for s in character['hechizos']:
+    if s['nombre'] == spell_name:
+      spell = s
+      break
 
+  # Return None if the spell was not found
+  if spell is None:
+    return None
 
+  # If the requested spell level is higher than the spell's actual level, print a message and return None
+  if spell_level > spell['level']:
+    print('Overpowered!')
+    return None
 
+  # Get the maximum and remaining number of spells for the given level
+  spell_level_max = character['spell_slots'][f'spell_level_{spell_level}_max']
+  spell_level_remaining = character['spell_slots'][f'spell_level_{spell_level}']
 
-class Hechizo:
-    def __init__(self, nombre, tipo, nivel):
-        self.nombre = nombre
-        self.tipo = tipo
-        self.nivel = nivel
-    
-    def calcular_dano(self, valor_base, multiplicador):
-        # Función que calcula el daño del hechizo en función de los parámetros recibidos
-        self.dano = valor_base * multiplicador
-    
-    def usar(self):
-        print(f"Hechizo usado: {self.nombre} (nivel {self.nivel}, daño {self.dano})")
+  # Return None if there are no remaining spells
+  if spell_level_remaining == 0:
+    return None
 
+  # Decrement the number of remaining spells by 1
+  spell_level_remaining -= 1
 
+  # Update the number of remaining spells in the JSON data
+  character['spell_slots'][f'spell_level_{spell_level}'] = spell_level_remaining
 
-hechizo = Hechizo("Bola de Fuego", "Fuego", 3)
-hechizo.calcular_dano(50, 1.5)
+  # If the requested spell level is the same as the spell's actual level, print the spell's details
+  if spell_level == spell['level']:
+    print(f'Hit: {spell["damage"]["hit"]}')
+    print(f'Saving throw: {spell["damage"]["saving_throw"]}')
+    print(f'Damage dice: {spell["damage"]["damage_dice"]}')
+    print(f'Damage type: {spell["damage"]["damage_type"]}')
+
+  # Return the spell object
+  return spell
