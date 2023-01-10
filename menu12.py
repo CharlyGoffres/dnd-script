@@ -21,11 +21,13 @@ def fmenu12():
     while i == 0:
         match menu12:
             case "1":
+                #MENU PER SABER ELS SPELLS SLOTS
                 i = 1
                 print("Tens:\nHechizens de Nivell 1: {}/{}\nHechizens de Nivell 2: {}/{}\nHechizens de Nivell 3: {}/{}\nHechizens de Nivell 4: {}/{}".format(variables["spell_slots"]["spell_level_1"], variables["spell_slots"]["spell_level_1_max"], variables["spell_slots"]["spell_level_2"], variables["spell_slots"]["spell_level_2_max"], variables["spell_slots"]["spell_level_3"], variables["spell_slots"]["spell_level_3_max"], variables["spell_slots"]["spell_level_4"], variables["spell_slots"]["spell_level_4_max"]))
                 time.sleep(3)
                 fmenu12()
             case "2":
+                #MENU PER SABER ELS HECHIZOS
                 # Obtiene la lista de hechizos
                 spells = variables["hechizos"]
                 # Agrupa los hechizos según su nivel
@@ -43,6 +45,7 @@ def fmenu12():
                         print(f"  {i+1}. {spell['nombre']}")
                 print()
                 i = 1
+                time.sleep(3)
                 fmenu12()
             case "3":
                 i = 1
@@ -52,7 +55,7 @@ def fmenu12():
                 fmenu124()
             case "5":
                 i = 1
-                fmenu1()
+                menu1.fmenu1()
             case "6":
                 os.system('cls')
                 print("Txao txao!")
@@ -60,3 +63,16 @@ def fmenu12():
             case _:
                 print("Vaja, no t'he entés. Recorda que has de posar un número del 1-6 dependent de la opció que vulguis. Torna-ho a provar")
 
+
+#MENU 123 ATAC DELS HECHIZOS
+
+
+def fmenu123():
+    print("Hola")
+
+
+#MENU 124 CANVIAR ELS SPELLS SLOTS MANUALMENT
+
+
+def fmenu124():
+    print("Hola")
